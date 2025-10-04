@@ -7,7 +7,7 @@
 
 ---
 
-## What I build 💊
+## What I build 💊📊
 - **Population & clinical intelligence** — Cohorts, care gaps, embedded refills, and payer program tracking
 - **Revenue & ROI analytics** — Contract performance, pricing, and pipeline models for leadership & sales
 - **Developer-grade BI** — Git-versioned, tested dashboards backed by a warehouse (no more fragile pivots)
@@ -24,7 +24,7 @@
 
 ---
 
-## Selected work (snapshots)
+## Selected work 📊
 - **Embedded Refills & Care Gaps** — Designed the data model and daily cohort refresh; standardized SQL into stored procedures (~**70% fewer lines**), improved performance and maintainability. *(AWS Redshift, dbt, Airflow, FHIR, Tableau/Power BI)*
 - **Revenue & Program Performance** — Benchmarks and trend tracking for ACO/MSSP/HEDIS/Stars; aligned finance & clinical leaders on targets. *(SQL, Python, Tableau)*
 - **Warehouse + BI modernization** — Re-architected S3 layout and ETL; replaced ad-hoc spreadsheets with Git-versioned, quality-tested dashboards. *(S3, Redshift, dbt, CI/CD)*
@@ -40,7 +40,6 @@
 ## Tech I use
 **Data & Cloud:** SQL, Python (pandas, PySpark, Jinja, boto), R (tidyverse), dbt, Airflow, Git/GitHub, AWS (S3, Redshift), Databricks  
 **BI & Viz:** Tableau, Power BI, QuickSight, Sisense for Cloud Data Teams  
-**Healthcare:** FHIR, ICD-10, CPT, DRG; Epic, Cerner, Veradigm, athenahealth  
 **Ops:** Bash, Ruby, macOS, Windows, Debian, SumoLogic
 
 ---
