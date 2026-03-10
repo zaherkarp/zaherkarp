@@ -1,50 +1,45 @@
-# Hi, I'm Zaher 👋
-**Analytics engineer & product analyst for population health.** I turn messy EHR data into reliable, self-service intelligence that clinicians, ops, and execs can use today.
+# Hi, I'm Zaher
 
-- Built and scaled analytics for Epic, Cerner, Allscripts, and athenahealth environments
-- Ship governed BI with dbt/Airflow/SQL on AWS & Databricks; visualize in Tableau/Power BI/QuickSight
-- Focused on value-based care (ACO, MSSP, HEDIS, Stars), workflow design, data governance, and FHIR interoperability
+I build and govern production analytics systems in regulated healthcare — pipelines, semantic layers, and data products that clinical, operational, and executive teams can trust and act on.
 
----
+I started as a news writer and book editor, then moved into healthcare research and analytics. That background still shapes how I work: clear questions, defensible methods, and results that change decisions.
 
-## What I build 💊📊
-- **Population & clinical intelligence** — Cohorts, care gaps, embedded refills, and payer program tracking
-- **Revenue & ROI analytics** — Contract performance, pricing, and pipeline models for leadership & sales
-- **Developer-grade BI** — Git-versioned, tested dashboards backed by a warehouse (no more fragile pivots)
+Currently: Lead Data Engineer at Baltimore Health Analytics, working on Medicare Advantage quality and performance analytics.
 
 ---
 
-## Recent impact 📈
-- Tracked **multimillion-dollar** revenue for value-based contracts  
-- Cut S3/storage costs by **50%** and reduced weekly ETL time by **24 hours**  
-- Removed **400+ manual hours/quarter** with governed self-service  
-- Grew active users **7×** through simpler, faster dashboards  
-- Saved **500+ hours/year** and scaled analytics to **10×** more customers  
-- Built ROI models that supported **$1MM+** in recurring revenue
+## What I work on
+
+- **Production data pipelines** — EHR data modeling across Epic, Cerner, Veradigm, and athenahealth; ETL/ELT on AWS and Databricks; stored procedures built to survive edge cases in regulated populations
+- **Analytics governance** — Semantic layers, metric definitions, and dbt-versioned models that give stakeholders one version of truth
+- **Value-based care analytics** — ACO, MSSP, HEDIS, and Medicare Stars performance tracking; benchmarking and significance testing against CMS methodology
+- **Platform reliability** — Observability, incident response, and cost optimization across cloud data infrastructure
 
 ---
 
-## Selected work 📊
-- **Embedded Refills & Care Gaps** — Designed the data model and daily cohort refresh; standardized SQL into stored procedures (~**70% fewer lines**), improved performance and maintainability. *(AWS Redshift, dbt, Airflow, FHIR, Tableau/Power BI)*
-- **Revenue & Program Performance** — Benchmarks and trend tracking for ACO/MSSP/HEDIS/Stars; aligned finance & clinical leaders on targets. *(SQL, Python, Tableau)*
-- **Warehouse + BI modernization** — Re-architected S3 layout and ETL; replaced ad-hoc spreadsheets with Git-versioned, quality-tested dashboards. *(S3, Redshift, dbt, CI/CD)*
+## Selected work
+
+**Payer Quality Analytics Platform** — Lead data engineering for a SaaS Medicare Advantage analytics platform. Designed stored procedure architecture for regulatory measure calculation, CMS specification validation, and plan-level performance reporting. *(MariaDB, Python, Ruby on Rails)*
+
+**Embedded Refills and Care Gaps** — Designed the data model and daily cohort refresh pipeline; standardized legacy SQL into shared stored procedures (~70% reduction in codebase), improving maintainability and cross-customer deployment. *(AWS Redshift, dbt, Airflow, FHIR, Tableau, Power BI)*
+
+**Revenue and Program Performance** — Built benchmarking and trend tracking for ACO/MSSP/HEDIS/Stars programs; reduced storage costs ~50% and ETL load time by 24+ hours through infrastructure redesign; governed dashboards enabled 7× user growth and eliminated 400+ manual hours per quarter. *(S3, Redshift, dbt, SQL, Python, Tableau)*
 
 ---
 
-## Talks 🗣️  & writing ✍️
-- Presented at state and national conferences on community-engaged mental health research and quality/safety improvement
-- Published on clinic design and team efficiency, accountable care savings/quality, and EHR optimization planning
+## Research and writing
+
+Published on accountable care organization shared savings, clinic design and team efficiency, and EHR optimization in primary care. Presented at state and national conferences on population health, community-engaged mental health research, and quality and safety improvement — audiences ranging from clinical teams to health system leadership.
 
 ---
 
-## Tech I use
-**Data & Cloud:** SQL, Python (pandas, PySpark, Jinja, boto), R (tidyverse), dbt, Airflow, Git/GitHub, AWS (S3, Redshift), Databricks  
-**BI & Viz:** Tableau, Power BI, QuickSight, Sisense for Cloud Data Teams  
-**Ops:** Bash, Ruby, macOS, Windows, Debian, SumoLogic
+## Stack
+
+**Data and cloud:** SQL, Python (pandas, PySpark, Jinja, boto), R, dbt, Airflow, Git, AWS (S3, Redshift), Databricks, Perl, Ruby  
+**BI and visualization:** Tableau, Power BI, QuickSight, Sisense for Cloud Data Teams  
+**Observability:** Grafana, DataDog, SumoLogic  
+**Healthcare data:** Epic Clarity, FHIR, HL7, CMS technical specifications
 
 ---
 
-## About me (the short version)
-I started as a news writer and book editor, then moved into healthcare research and analytics. That background still shapes how I work today: clear questions, defensible methods, and results that change decisions.
-
----
+zaherkarp@gmail.com · [zaherkarp.com](https://zaherkarp.com) · [linkedin.com/in/zkarp](https://linkedin.com/in/zkarp)
