@@ -39,7 +39,3 @@ Published on accountable care organization shared savings, clinic design and tea
 **BI and visualization:** Tableau, Power BI, QuickSight, Sisense for Cloud Data Teams  
 **Observability:** Grafana, DataDog, SumoLogic  
 **Healthcare data:** Epic Clarity, FHIR, HL7, CMS technical specifications
-
----
-
-zaherkarp@gmail.com · [zaherkarp.com](https://zaherkarp.com) · [linkedin.com/in/zkarp](https://linkedin.com/in/zkarp)
