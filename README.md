@@ -38,4 +38,4 @@ Published on accountable care organization shared savings, clinic design and tea
 **Data and cloud:** SQL, Python (pandas, PySpark, Jinja, boto), R, dbt, Airflow, Git, AWS (S3, Redshift), Databricks, Perl, Ruby  
 **BI and visualization:** Tableau, Power BI, QuickSight, Sisense for Cloud Data Teams  
 **Observability:** Grafana, DataDog, SumoLogic  
-**Healthcare data:** Epic Clarity, FHIR, HL7, CMS technical specifications
+**Healthcare data:** Epic Clarity, Cerner, Veradigm/Allscripts, athenahealth, FHIR, HL7, CMS technical specifications, Public Use Files
