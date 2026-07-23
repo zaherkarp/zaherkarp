@@ -1,7 +1,10 @@
 <h1 align="center">Zaher Karp, M.P.H.</h1>
 
 <p align="center">
-  <strong>Manager, Data Science &amp; Engineering</strong> · Baltimore Health Analytics<br>
+  <!-- title:start -->
+  <strong>Manager, Data Science and Engineering</strong> · Baltimore Health Analytics
+  <!-- title:end -->
+  <br>
   Production analytics in regulated healthcare: CMS Star Ratings, HEDIS, and value-based care.
 </p>
 
@@ -53,33 +56,39 @@ I started as a news writer and book editor, moved into healthcare research at UW
 
 Long-form essays on healthcare data engineering, Stars methodology, and measurement. A few recent ones:
 
+<!-- writing:start -->
 - [The Metric Isn't Wrong. It's Just Not Where Quality Lives.](https://zaherkarp.com/blog/what-the-metric-cannot-see/)
-- [Your Cut Point Forecast Has a Lucas Critique Problem](https://zaherkarp.com/blog/lucas-critique-stars-forecasting/)
+- [One API call, three ways to split it: a FRED case study](https://zaherkarp.com/blog/one-api-call-three-ways-to-split-it/)
+- [Should I Buy RAM Now?](https://zaherkarp.com/blog/should-i-buy-ram-now/)
+- [Governing the Coverage Decision: A Metamodel for LLM Accountability in Payers and Payviders](https://zaherkarp.com/blog/governing-the-coverage-decision/)
 - [Credentialing Looks Rigorous. Its Performance Scores Are Mostly Noise.](https://zaherkarp.com/blog/credentialing-validity/)
-- [Did Medicaid Work Requirements Work? A Meta-Analysis of Arkansas](https://zaherkarp.com/blog/medicaid-work-requirements-arkansas/)
-- [One API Call, Three Ways to Split It: a FRED Case Study](https://zaherkarp.com/blog/one-api-call-three-ways-to-split-it/)
+<!-- writing:end -->
 
 Full archive at [zaherkarp.com/blog](https://zaherkarp.com/blog/).
 
 ## Research
 
-Six peer-reviewed papers on accountable care (Medicare Shared Savings), clinic design and team efficiency, and EHR optimization in primary care, from my years at UW-Madison. A couple of highlights:
+Peer-reviewed work on accountable care (Medicare Shared Savings), clinic design and team efficiency, and EHR optimization in primary care, from my years at UW-Madison.
+
+<!-- research:start -->
+6 peer-reviewed publications ([Google Scholar](https://scholar.google.com/citations?user=exrRbXMAAAAJ), [ResearchGate](https://www.researchgate.net/profile/Zaher-Karp)). The two most cited:
 
 - [Approaches and challenges to optimizing primary care teams' electronic health record usage](https://pubmed.ncbi.nlm.nih.gov/25584902/) — *Journal of Innovation in Health Informatics* (2014)
-- [Influence of environmental design on team interactions across 3 family medicine clinics](https://pubmed.ncbi.nlm.nih.gov/30913920/) — *Health Environments Research &amp; Design Journal* (2019)
-
-Full list on [Google Scholar](https://scholar.google.com/citations?user=exrRbXMAAAAJ) and [ResearchGate](https://www.researchgate.net/profile/Zaher-Karp).
+- [Influence of environmental design on team interactions across 3 family medicine clinics](https://pubmed.ncbi.nlm.nih.gov/30913920/) — *Health Environments Research & Design Journal* (2019)
+<!-- research:end -->
 
 ## Tech stack
 
-**Engineering &amp; data**  
+<!-- stack:start -->
+**Engineering & data**  
 ![SQL](https://img.shields.io/badge/SQL-0A5C54?style=flat-square) ![Python](https://img.shields.io/badge/Python-0A5C54?style=flat-square&logo=python&logoColor=white) ![dbt](https://img.shields.io/badge/dbt-0A5C54?style=flat-square&logo=dbt&logoColor=white) ![Ruby on Rails](https://img.shields.io/badge/Ruby_on_Rails-0A5C54?style=flat-square&logo=rubyonrails&logoColor=white) ![Clojure](https://img.shields.io/badge/Clojure-0A5C54?style=flat-square&logo=clojure&logoColor=white) ![Perl](https://img.shields.io/badge/Perl-0A5C54?style=flat-square&logo=perl&logoColor=white) ![SAS](https://img.shields.io/badge/SAS-0A5C54?style=flat-square) ![Stata](https://img.shields.io/badge/Stata-0A5C54?style=flat-square) ![R](https://img.shields.io/badge/R-0A5C54?style=flat-square&logo=r&logoColor=white) ![git](https://img.shields.io/badge/git-0A5C54?style=flat-square&logo=git&logoColor=white)
 
-**Cloud &amp; BI**  
+**Cloud & BI**  
 ![AWS](https://img.shields.io/badge/AWS-334155?style=flat-square&logo=amazonwebservices&logoColor=white) ![Azure](https://img.shields.io/badge/Azure-334155?style=flat-square&logo=microsoftazure&logoColor=white) ![Databricks](https://img.shields.io/badge/Databricks-334155?style=flat-square&logo=databricks&logoColor=white) ![Okta](https://img.shields.io/badge/Okta-334155?style=flat-square&logo=okta&logoColor=white) ![Sisense](https://img.shields.io/badge/Sisense-334155?style=flat-square) ![Periscope](https://img.shields.io/badge/Periscope-334155?style=flat-square) ![Power BI](https://img.shields.io/badge/Power_BI-334155?style=flat-square&logo=powerbi&logoColor=white) ![Grafana](https://img.shields.io/badge/Grafana-334155?style=flat-square&logo=grafana&logoColor=white) ![Datadog](https://img.shields.io/badge/Datadog-334155?style=flat-square&logo=datadog&logoColor=white)
 
 **Healthcare**  
 ![HEDIS](https://img.shields.io/badge/HEDIS-6A6A6A?style=flat-square) ![CMS Medicare Stars](https://img.shields.io/badge/CMS_Medicare_Stars-6A6A6A?style=flat-square) ![ACO](https://img.shields.io/badge/ACO-6A6A6A?style=flat-square) ![MSSP](https://img.shields.io/badge/MSSP-6A6A6A?style=flat-square) ![HIPAA](https://img.shields.io/badge/HIPAA-6A6A6A?style=flat-square) ![HITRUST](https://img.shields.io/badge/HITRUST-6A6A6A?style=flat-square) ![ICD-10](https://img.shields.io/badge/ICD--10-6A6A6A?style=flat-square) ![RxNorm](https://img.shields.io/badge/RxNorm-6A6A6A?style=flat-square) ![HL7](https://img.shields.io/badge/HL7-6A6A6A?style=flat-square) ![Epic](https://img.shields.io/badge/Epic-6A6A6A?style=flat-square) ![Cerner](https://img.shields.io/badge/Cerner-6A6A6A?style=flat-square) ![Veradigm](https://img.shields.io/badge/Veradigm-6A6A6A?style=flat-square) ![athenahealth](https://img.shields.io/badge/athenahealth-6A6A6A?style=flat-square)
+<!-- stack:end -->
 
 ## Education
 
@@ -87,4 +96,4 @@ Full list on [Google Scholar](https://scholar.google.com/citations?user=exrRbXMA
 
 ---
 
-<p align="center"><sub>Madison, WI · Remote · <a href="https://zaherkarp.com">zaherkarp.com</a></sub></p>
+<p align="center"><sub>Title, stack, writing, and research above are generated from <a href="https://zaherkarp.com">zaherkarp.com</a>'s sources of truth (see the <a href="https://zaherkarp.com/colophon/">colophon</a>). · Madison, WI · Remote</sub></p>

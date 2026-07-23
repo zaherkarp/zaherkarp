@@ -1,0 +1,6 @@
+# Site checkout the sync workflow clones to read sources of truth.
+site/
+
+# Python
+__pycache__/
+*.pyc

@@ -1,0 +1,4 @@
+# Deps for scripts/build_readme.py (the profile README generator).
+# Same libraries the site uses to read these same sources of truth.
+pyyaml>=6.0
+python-frontmatter>=1.1.0
