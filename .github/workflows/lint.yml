@@ -1,0 +1,20 @@
+name: Lint
+
+# CI backstop for the generated-marker contract: the README's injection
+# regions must stay paired and intact so the sync generator can't corrupt the
+# file. Stdlib only, no deps.
+on:
+  pull_request: {}
+  push:
+    branches: [main]
+
+jobs:
+  markers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Marker integrity
+        run: python scripts/lint_markers.py
