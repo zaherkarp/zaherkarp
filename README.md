@@ -57,11 +57,11 @@ I started as a news writer and book editor, moved into healthcare research at UW
 Long-form essays on healthcare data engineering, Stars methodology, and measurement. A few recent ones:
 
 <!-- writing:start -->
+- [BTEQ Still Has a Job](https://zaherkarp.com/blog/bteq-still-has-a-job/)
 - [The Metric Isn't Wrong. It's Just Not Where Quality Lives.](https://zaherkarp.com/blog/what-the-metric-cannot-see/)
 - [One API call, three ways to split it: a FRED case study](https://zaherkarp.com/blog/one-api-call-three-ways-to-split-it/)
 - [Should I Buy RAM Now?](https://zaherkarp.com/blog/should-i-buy-ram-now/)
 - [Governing the Coverage Decision: A Metamodel for LLM Accountability in Payers and Payviders](https://zaherkarp.com/blog/governing-the-coverage-decision/)
-- [Credentialing Looks Rigorous. Its Performance Scores Are Mostly Noise.](https://zaherkarp.com/blog/credentialing-validity/)
 <!-- writing:end -->
 
 Full archive at [zaherkarp.com/blog](https://zaherkarp.com/blog/).
