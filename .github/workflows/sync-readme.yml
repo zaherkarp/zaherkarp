@@ -1,9 +1,14 @@
 name: Sync README from site
 
 # Regenerate the profile README's Title / Stack / Writing / Research blocks
-# from zaherkarp.github.io's sources of truth. Read side needs no token (the
-# site repo is public); write side commits to this repo with the built-in
-# GITHUB_TOKEN. No secrets.
+# from zaherkarp.github.io's sources of truth. The site repo is PRIVATE, so the
+# read side needs a token: a fine-grained PAT with read-only Contents access to
+# zaherkarp/zaherkarp.github.io, stored here as the SITE_READ_TOKEN secret. The
+# write side still commits to this repo with the built-in GITHUB_TOKEN.
+#
+# NOTE: fine-grained PATs expire. When SITE_READ_TOKEN lapses, the preflight
+# step below fails with an explicit message rather than a cryptic git error.
+# Reissue the PAT and update the secret; nothing else changes.
 #
 # Cadence: daily, plus a manual "Run workflow" button for an on-demand sync.
 # The site changes often (blog posts; weekly citation refresh), so this repo
@@ -40,8 +45,25 @@ jobs:
       - name: Install deps
         run: pip install -r scripts/requirements.txt
 
-      - name: Clone the public site (sources of truth; no auth needed)
-        run: git clone --depth 1 https://github.com/zaherkarp/zaherkarp.github.io site
+      - name: Preflight - site read token present
+        env:
+          SITE_READ_TOKEN: ${{ secrets.SITE_READ_TOKEN }}
+        run: |
+          if [ -z "$SITE_READ_TOKEN" ]; then
+            echo "::error::SITE_READ_TOKEN is unset or expired. zaherkarp.github.io is private."
+            echo "::error::Create a fine-grained PAT with read-only Contents access to"
+            echo "::error::zaherkarp/zaherkarp.github.io and store it as the SITE_READ_TOKEN secret."
+            exit 1
+          fi
+
+      - name: Check out the site (private; read-only PAT)
+        uses: actions/checkout@v4
+        with:
+          repository: zaherkarp/zaherkarp.github.io
+          token: ${{ secrets.SITE_READ_TOKEN }}
+          path: site
+          fetch-depth: 1
+          persist-credentials: false
 
       - name: Regenerate README blocks
         run: python scripts/build_readme.py --site site

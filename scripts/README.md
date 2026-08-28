@@ -28,11 +28,13 @@ Each block is a projection of one source of truth on the site:
 
 ## Running it by hand
 
-The sync runs on its own (see Automation). To run it locally, clone the public
-site somewhere and point the generator at it:
+The sync runs on its own (see Automation). To run it locally, clone the site
+somewhere and point the generator at it. The site repo is **private**, so this
+needs a GitHub login with access to it (`gh auth login`, an SSH key, or a
+credential helper):
 
 ```bash
-git clone --depth 1 https://github.com/zaherkarp/zaherkarp.github.io site
+git clone --depth 1 git@github.com:zaherkarp/zaherkarp.github.io.git site
 pip install -r scripts/requirements.txt
 python scripts/build_readme.py --site site
 python scripts/lint_markers.py
