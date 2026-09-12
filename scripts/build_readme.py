@@ -4,13 +4,16 @@ sources of truth (zaherkarp.github.io).
 
 The GitHub profile README's Title, Stack, Writing, and Research blocks are
 generated artifacts of the site's single sources of truth, so the profile
-cannot quietly drift from the site. The prose blocks (About, Selected impact,
-Featured projects, Education) are hand-authored and left untouched.
+cannot quietly drift from the site. Featured projects joined them on
+2026-09-12, after the hand-written version drifted into a 404, a plain-HTTP
+redirect chain and a two-projects-stale list. The remaining prose blocks
+(About, Selected impact, Education) are hand-authored and left untouched.
 
 Sources (inside the site checkout passed via --site):
   src/content/resume.md          -> headline title + employer (current role)
   src/content/skills.yaml        -> stack badges
   src/content/blog/*.md          -> featured writing (frontmatter)
+  src/content/projects.yaml      -> featured projects list
   src/content/publications.yaml  -> research highlights
 
 Idempotent: same inputs -> byte-identical README. Mirrors the site's
@@ -32,7 +35,11 @@ import yaml
 # Profile-level social URLs (stable; not stored on the site as data).
 SCHOLAR = "https://scholar.google.com/citations?user=exrRbXMAAAAJ"
 RESEARCHGATE = "https://www.researchgate.net/profile/Zaher-Karp"
-BLOG_BASE = "https://zaherkarp.com/blog"
+# Canonical host is www; the apex 301s to it (site CLAUDE.md, "Canonical URLs
+# are www"). Linking the apex spends a redirect on every click, so both
+# bases below are www. BLOG_BASE said apex until 2026-09-12.
+SITE_BASE = "https://www.zaherkarp.com"
+BLOG_BASE = f"{SITE_BASE}/blog"
 
 WRITING_COUNT = 5  # most-recent non-draft posts shown under Writing
 
@@ -185,6 +192,63 @@ def render_writing(site: Path, n: int = WRITING_COUNT) -> str:
     return "\n".join(lines)
 
 
+def _display_label(label: str) -> str:
+    """Sentence-case a link label for the profile.
+
+    Labels are stored in the YAML exactly as index.html writes them, because
+    the site's lint_projects compares the two literally. The site's own rows
+    are lowercase by its typographic convention ("post", "case study"), which
+    reads as a typo in a README list. This capitalises the first character
+    and touches nothing else, so "GitHub" survives intact where a .title() or
+    .capitalize() would mangle it to "Github". Presentation only: do NOT push
+    this back into the YAML or the site lint stops matching.
+    """
+    return label[:1].upper() + label[1:] if label else label
+
+
+def render_projects(site: Path) -> str:
+    """The Featured projects list, from the site's src/content/projects.yaml.
+
+    That file is the site's canonical project LIST and is held against
+    index.html's actual project cards by its scripts/lint_projects.py, so
+    this block cannot drift from the site the way the hand-written list it
+    replaces did. Before 2026-09-12 this section was authored here by hand
+    and had gone wrong three ways at once: a [Source] link to
+    zaherkarp.github.io, private since 2026-08-28 and so a 404 on the front
+    page anyone lands on when they look him up; a [Live feed] pointing at the
+    retired /medicare-advantage-insight-engine/ subpath, whose redirect chain
+    then terminated on plain HTTP; and a list two projects behind the site
+    while promoting one the site does not treat as a project at all.
+
+    URLs are stored site-relative in the YAML exactly as index.html writes
+    them ("/blog/..."), which is what lets the site's lint compare the two
+    surfaces literally. Absolutising them is therefore THIS side's job, and
+    it must stay that way: storing absolute URLs in the YAML would silence
+    that lint.
+    """
+    data = yaml.safe_load((site / "src/content/projects.yaml").read_text(encoding="utf-8"))
+    entries = sorted((data or {}).get("projects") or [], key=lambda e: e.get("order", 0))
+
+    def absolutise(url: str) -> str:
+        return f"{SITE_BASE}{url}" if url.startswith("/") else url
+
+    lines = []
+    for e in entries:
+        # Em-dash -> comma on sourced text, the same chrome convention
+        # render_writing applies to post titles. The " — " separator below is
+        # the generator's own punctuation, matching render_research.
+        title = str(e.get("title", "")).strip().replace("\u2014", ",")
+        summary = " ".join(str(e.get("summary", "")).split()).replace("\u2014", ",")
+        links = " · ".join(
+            f"[{_display_label(l['label'])}]({absolutise(l['url'])})"
+            for l in (e.get("links") or [])
+        )
+        # Two trailing spaces = a markdown hard break, so the links sit on
+        # their own line under the description, as the hand-written block did.
+        lines.append(f"- **{title}** — {summary}  \n  {links}")
+    return "\n".join(lines)
+
+
 def render_research(site: Path) -> str:
     pubs = yaml.safe_load((site / "src/content/publications.yaml").read_text(encoding="utf-8"))
     n = len(pubs)
@@ -217,6 +281,7 @@ def main() -> None:
     text = replace_between(text, "title", render_title(site), end_indent="  ")
     text = replace_between(text, "stack", render_stack(site))
     text = replace_between(text, "writing", render_writing(site))
+    text = replace_between(text, "projects", render_projects(site))
     text = replace_between(text, "research", render_research(site))
 
     readme.write_text(text, encoding="utf-8")

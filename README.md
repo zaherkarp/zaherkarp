@@ -9,12 +9,12 @@
 </p>
 
 <p align="center">
-  <a href="https://zaherkarp.com"><img alt="Website" src="https://img.shields.io/badge/Website-0A5C54?style=flat-square&logo=googlechrome&logoColor=white"></a>
+  <a href="https://www.zaherkarp.com"><img alt="Website" src="https://img.shields.io/badge/Website-0A5C54?style=flat-square&logo=googlechrome&logoColor=white"></a>
   <a href="https://linkedin.com/in/zkarp"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"></a>
   <a href="https://scholar.google.com/citations?user=exrRbXMAAAAJ"><img alt="Google Scholar" src="https://img.shields.io/badge/Google_Scholar-4285F4?style=flat-square&logo=googlescholar&logoColor=white"></a>
   <a href="https://public.tableau.com/app/profile/zaher.karp/vizzes"><img alt="Tableau Public" src="https://img.shields.io/badge/Tableau_Public-E97627?style=flat-square&logo=tableau&logoColor=white"></a>
-  <a href="https://zaherkarp.com/blog/"><img alt="Writing" src="https://img.shields.io/badge/Writing-0A5C54?style=flat-square&logo=rss&logoColor=white"></a>
-  <a href="https://zaherkarp.com/resume.pdf"><img alt="Resume" src="https://img.shields.io/badge/Resume-B31B1B?style=flat-square&logo=adobeacrobatreader&logoColor=white"></a>
+  <a href="https://www.zaherkarp.com/blog/"><img alt="Writing" src="https://img.shields.io/badge/Writing-0A5C54?style=flat-square&logo=rss&logoColor=white"></a>
+  <a href="https://www.zaherkarp.com/resume.pdf"><img alt="Resume" src="https://img.shields.io/badge/Resume-B31B1B?style=flat-square&logo=adobeacrobatreader&logoColor=white"></a>
   <a href="mailto:me@zaherkarp.com"><img alt="Email" src="https://img.shields.io/badge/Email-0A5C54?style=flat-square&logo=gmail&logoColor=white"></a>
 </p>
 
@@ -35,16 +35,20 @@ I started as a news writer and book editor, moved into healthcare research at UW
 
 ## Featured projects
 
-- **Stars Cliff Simulator** — interactive teaching demo of the 4.0★ Quality Bonus Payment cliff in CMS Star Ratings. Pure vanilla JS, no dependencies, synthetic weights.  
-  [Live demo](https://zaherkarp.com/star-rating-predictor/) · [Methodology](https://zaherkarp.com/blog/star-rating-predictor-methodology/) · [Source](https://github.com/zaherkarp/zaherkarp.github.io/tree/main/star-rating-predictor)
-- **Medicare Advantage Insight Engine** — a self-running daily feed that separates CMS Medicare Advantage rulemaking signal from press-release noise.  
-  [Live feed](https://zaherkarp.com/medicare-advantage-insight-engine/) · [Repo](https://github.com/zaherkarp/medicare-advantage-insight-engine) · [Write-up](https://zaherkarp.com/blog/medicare-advantage-insight-engine/)
-- **Healthcare Workforce Transition Platform (SkillSprout)** — an O\*NET-based model estimating reskilling transition probabilities across the healthcare workforce.  
-  [Repo](https://github.com/zaherkarp/skillsprout) · [Write-up](https://zaherkarp.com/blog/onet-reskilling-probabilities/)
-- **ECDS Shock Index** — a HEDIS Electronic Clinical Data Systems (ECDS) measure prototype and worked example.  
-  [Repo](https://github.com/zaherkarp/ecds-shock-index) · [Write-up](https://zaherkarp.com/blog/ecds-shock-index/)
-- **Stochastic Epidemic Simulator** — a SEIRV epidemic model that runs entirely in the browser via Pyodide, with Plotly charts.  
-  [Live demo](https://zaherkarp.com/epidemic-simulation/) · [Write-up](https://zaherkarp.com/blog/two-states-one-pathogen/)
+<!-- projects:start -->
+- **Medicare Advantage Insight Engine** — A self-running daily feed that separates CMS Medicare Advantage rulemaking signal from press-release noise, scoring each item on six named features and posting what clears the threshold.  
+  [Daily Briefing](https://signal.zaherkarp.com/briefing.html) · [Live feed](https://signal.zaherkarp.com/) · [Source](https://github.com/zaherkarp/medicare-advantage-insight-engine) · [Methodology post](https://www.zaherkarp.com/blog/medicare-advantage-insight-engine/)
+- **Stars Cliff Simulator** — An interactive teaching demo of the 4.0 star Quality Bonus Payment cliff in CMS Star Ratings. Vanilla JS, no dependencies, synthetic weights.  
+  [Live demo](https://www.zaherkarp.com/star-rating-predictor/) · [Methodology post](https://www.zaherkarp.com/blog/star-rating-predictor-methodology/)
+- **Healthcare Workforce Transition Platform** — An O*NET-based model estimating reskilling transition probabilities across the healthcare workforce, sorting targets into Ready Now, Trainable, and Long-Term Reskill with a skill-domain gap analysis.  
+  [GitHub](https://github.com/zaherkarp/skillsprout) · [Post](https://www.zaherkarp.com/blog/onet-reskilling-probabilities/)
+- **ECDS Shock Index** — A HEDIS Electronic Clinical Data Systems measure prototype that models how rates shift when ECDS replaces claims-based ED coding, and estimates the Stars cut-point effect at the plan level.  
+  [GitHub](https://github.com/zaherkarp/ecds-shock-index) · [Post](https://www.zaherkarp.com/blog/ecds-shock-index/)
+- **Care Delivery Workflow Changes** — An interrupted time series evaluation of a care-delivery redesign, separating the level shift at implementation from the underlying trend.  
+  [Case study](https://www.zaherkarp.com/case-study-care-redesign/) · [Post](https://www.zaherkarp.com/blog/interrupted-time-series-care-redesign/)
+- **Practice Automation Analytics, healthfinch Charlie** — A return-on-investment model for clinical practice automation, built on Epic Clarity extracts and delivered as a stakeholder-facing dashboard.  
+  [Post](https://www.zaherkarp.com/blog/practice-automation-workflow-roi/)
+<!-- projects:end -->
 
 ## Selected impact
 
@@ -57,14 +61,14 @@ I started as a news writer and book editor, moved into healthcare research at UW
 Long-form essays on healthcare data engineering, Stars methodology, and measurement. A few recent ones:
 
 <!-- writing:start -->
-- [My Cap Falls by a Third. My Work Falls by a Sixth.](https://zaherkarp.com/blog/cap-falls-third-work-falls-sixth/)
-- [BTEQ Still Has a Job](https://zaherkarp.com/blog/bteq-still-has-a-job/)
-- [The Metric Isn't Wrong. It's Just Not Where Quality Lives.](https://zaherkarp.com/blog/what-the-metric-cannot-see/)
-- [One API call, three ways to split it: a FRED case study](https://zaherkarp.com/blog/one-api-call-three-ways-to-split-it/)
-- [Should I Buy RAM Now?](https://zaherkarp.com/blog/should-i-buy-ram-now/)
+- [My Cap Falls by a Third. My Work Falls by a Sixth.](https://www.zaherkarp.com/blog/cap-falls-third-work-falls-sixth/)
+- [BTEQ Still Has a Job](https://www.zaherkarp.com/blog/bteq-still-has-a-job/)
+- [The Metric Isn't Wrong. It's Just Not Where Quality Lives.](https://www.zaherkarp.com/blog/what-the-metric-cannot-see/)
+- [One API call, three ways to split it: a FRED case study](https://www.zaherkarp.com/blog/one-api-call-three-ways-to-split-it/)
+- [Should I Buy RAM Now?](https://www.zaherkarp.com/blog/should-i-buy-ram-now/)
 <!-- writing:end -->
 
-Full archive at [zaherkarp.com/blog](https://zaherkarp.com/blog/).
+Full archive at [zaherkarp.com/blog](https://www.zaherkarp.com/blog/).
 
 ## Research
 
@@ -96,4 +100,4 @@ Peer-reviewed work on accountable care (Medicare Shared Savings), clinic design 
 
 ---
 
-<p align="center"><sub>Title, stack, writing, and research above are generated from <a href="https://zaherkarp.com">zaherkarp.com</a>'s sources of truth (see the <a href="https://zaherkarp.com/colophon/">colophon</a>). · Madison, WI · Remote</sub></p>
+<p align="center"><sub>Title, stack, writing, projects, and research above are generated from <a href="https://www.zaherkarp.com">zaherkarp.com</a>'s sources of truth (see the <a href="https://www.zaherkarp.com/colophon/">colophon</a>). · Madison, WI · Remote</sub></p>
