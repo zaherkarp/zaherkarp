@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 # file (repo-relative) -> marker names build_readme.py injects into.
 PAIR_MARKERS: dict[str, list[str]] = {
-    "README.md": ["title", "stack", "writing", "research"],
+    "README.md": ["title", "stack", "writing", "projects", "research"],
 }
 
 MARK_RE = re.compile(r"^\s*<!--\s*([a-z0-9-]+):(start|end)\s*-->\s*$")
