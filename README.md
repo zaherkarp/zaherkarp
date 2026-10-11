@@ -62,10 +62,10 @@ Long-form essays on healthcare data engineering, Stars methodology, and measurem
 
 <!-- writing:start -->
 - [My Cap Falls by a Third. My Work Falls by a Sixth.](https://www.zaherkarp.com/blog/cap-falls-third-work-falls-sixth/)
+- [Eight Tools, Eight Models Folders](https://www.zaherkarp.com/blog/eight-tools-eight-models-folders/)
 - [BTEQ Still Has a Job](https://www.zaherkarp.com/blog/bteq-still-has-a-job/)
 - [The Metric Isn't Wrong. It's Just Not Where Quality Lives.](https://www.zaherkarp.com/blog/what-the-metric-cannot-see/)
 - [One API call, three ways to split it: a FRED case study](https://www.zaherkarp.com/blog/one-api-call-three-ways-to-split-it/)
-- [Should I Buy RAM Now?](https://www.zaherkarp.com/blog/should-i-buy-ram-now/)
 <!-- writing:end -->
 
 Full archive at [zaherkarp.com/blog](https://www.zaherkarp.com/blog/).
