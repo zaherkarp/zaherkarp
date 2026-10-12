@@ -86,10 +86,18 @@ CAT_COLOR = {
 # Presentation only: which skills exist, their order, and their category all
 # come from skills.yaml. A skill id absent here still renders (label derived
 # from its name, no logo), so a newly added skill appears automatically.
+#
+# Logo slugs must exist in Simple Icons, which shields.io draws from. An
+# unknown slug does NOT error: shields.io returns a normal 200 badge with the
+# icon silently missing. dbt, AWS, Azure and Power BI lost their icons this way
+# when Simple Icons removed those brands (confirmed absent in 16.35.0,
+# 2026-10-12), so they are None here. scripts/check_badges.py renders every
+# badge and fails when a requested logo does not draw; run it before adding
+# a slug here.
 SKILL_BADGES: dict[str, list[tuple[str, str | None]]] = {
     "sql": [("SQL", None)],
     "python": [("Python", "python")],
-    "dbt": [("dbt", "dbt")],
+    "dbt": [("dbt", None)],
     "rails": [("Ruby on Rails", "rubyonrails")],
     "clojure": [("Clojure", "clojure")],
     "perl": [("Perl", "perl")],
@@ -97,12 +105,12 @@ SKILL_BADGES: dict[str, list[tuple[str, str | None]]] = {
     "stata": [("Stata", None)],
     "r": [("R", "r")],
     "git": [("git", "git")],
-    "aws": [("AWS", "amazonwebservices")],
-    "azure-databricks": [("Azure", "microsoftazure"), ("Databricks", "databricks")],
+    "aws": [("AWS", None)],
+    "azure-databricks": [("Azure", None), ("Databricks", "databricks")],
     "okta": [("Okta", "okta")],
     "sisense": [("Sisense", None)],
     "periscope": [("Periscope", None)],
-    "power-bi": [("Power BI", "powerbi")],
+    "power-bi": [("Power BI", None)],
     "grafana": [("Grafana", "grafana")],
     "datadog": [("Datadog", "datadog")],
     "hedis": [("HEDIS", None)],
