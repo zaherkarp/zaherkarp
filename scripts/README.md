@@ -35,6 +35,7 @@ Each block is a projection of one source of truth on the site:
 | Writing | `src/content/blog/*.md` frontmatter (recent non-draft posts) |
 | Projects | `src/content/projects.yaml` (the site's canonical project list) |
 | Research | `src/content/publications.yaml` (count + most-cited) |
+| Stack badge colors | `src/content/palette.yaml` (light palette roles: `accent`, `ink_sec`, `muted`) |
 
 ## Running it by hand
 
@@ -144,9 +145,32 @@ set its logo to `None` (stack block, in `build_readme.py`) or delete the
 `&logo=...&logoColor=white` part (header row, in `README.md`). Do not
 substitute an unrelated icon to keep the row looking full.
 
-**Not changed, flagged for a decision.** The badge colors are hardcoded to the
-site's old petrol-teal palette (`0A5C54`, in `CAT_COLOR` and the header row).
-The site moved to the "Lichen" moss-green palette on 2026-07-23 (accent
-`#1d6835`, source `src/content/palette.yaml`), so the profile no longer
-matches the site even though the code comment says it uses the site palette.
-Reading the accent from `palette.yaml` would remove that drift for good.
+## Badge colors follow the site palette (2026-10-13)
+
+The badge colors were hardcoded to the site's old petrol-teal palette
+(`0A5C54`, `334155`, `6A6A6A`) and went stale when the site moved to the
+"Lichen" moss-green palette on 2026-07-23. The generator now reads them from
+the site's `src/content/palette.yaml` at build time, so a future repalette
+reaches the profile on the next daily sync with no edit here.
+
+| Stack category | Palette role | Color | White-text contrast |
+| --- | --- | --- | --- |
+| Engineering & data | `accent` | `#1D6835` | 6.8:1 |
+| Cloud & BI | `ink_sec` | `#3C443A` | 10.1:1 |
+| Healthcare | `muted` | `#5B655C` | 6.1:1 |
+
+All three clear WCAG AA (4.5:1) for the white badge text. The other roles
+(`bg`, `surface`, `rule`) are near-white and are deliberately not used. The
+mapping lives in `CAT_ROLE` in `build_readme.py`; a category the site adds
+later falls back to `muted`. If `palette.yaml` or one of those roles is
+missing, the build fails rather than falling back to hardcoded hex, since a
+silent fallback is how the drift happened.
+
+**The header row is hand-written and is NOT generated**, so it does not
+follow a repalette by itself. Its four badges for the site's own surfaces
+(Website, Writing, Resume, Email) were set to the `accent` color by hand.
+Resume had been Acrobat red (`B31B1B`), which only made sense next to the
+Acrobat icon that Simple Icons removed. LinkedIn, Google Scholar and Tableau
+Public keep their own brand colors, which identify those services now that
+two of them have lost their icons. If the site palette changes, update the
+four `1D6835` values in the header by hand.
