@@ -15,6 +15,7 @@ Sources (inside the site checkout passed via --site):
   src/content/blog/*.md          -> featured writing (frontmatter)
   src/content/projects.yaml      -> featured projects list
   src/content/publications.yaml  -> research highlights
+  src/content/palette.yaml       -> stack badge colors (light palette roles)
 
 Idempotent: same inputs -> byte-identical README. Mirrors the site's
 scripts/build_portfolio.py replace_between() marker injection.
@@ -74,22 +75,58 @@ def _badge(label: str, color: str, logo: str | None = None) -> str:
     return f"![{label}]({url})"
 
 
-# Category -> badge background. Uses the site palette (teal accent + two cool
-# neutrals) for brand coherence.
-CAT_COLOR = {
-    "Engineering & data": "0A5C54",
-    "Cloud & BI": "334155",
-    "Healthcare": "6A6A6A",
+# Category -> palette ROLE for the badge background. The colors themselves are
+# read from the site's src/content/palette.yaml (light screen palette) at build
+# time, so the profile follows any future repalette with no edit here.
+# Until 2026-10-13 they were hardcoded hex (0A5C54 / 334155 / 6A6A6A), which
+# was the site's petrol-teal palette and went stale when the site moved to
+# "Lichen" moss green on 2026-07-23. Roles rather than hex is the fix.
+#
+# White badge text on each role, measured contrast (WCAG AA needs 4.5:1):
+#   accent  #1d6835  6.8:1    ink_sec #3c443a  10.1:1    muted #5b655c  6.1:1
+# Only these three roles are used because they clear AA; bg, surface and rule
+# are near-white and would make white text unreadable.
+CAT_ROLE = {
+    "Engineering & data": "accent",
+    "Cloud & BI": "ink_sec",
+    "Healthcare": "muted",
 }
+DEFAULT_ROLE = "muted"  # a category the site adds later still renders
+
+
+def load_palette(site: Path) -> dict[str, str]:
+    """Light screen palette from the site, as bare uppercase hex for shields.io
+    ("#1d6835" -> "1D6835"). Fails loudly if the file or a needed role is
+    missing: a silent fallback to hardcoded colors is exactly how the badges
+    drifted to a retired palette the first time."""
+    path = site / "src/content/palette.yaml"
+    if not path.exists():
+        raise SystemExit(f"build_readme: {path} not found; badge colors come from it")
+    light = (yaml.safe_load(path.read_text(encoding="utf-8")) or {}).get("screen", {}).get("light", {})
+    out = {}
+    for role in set(CAT_ROLE.values()) | {DEFAULT_ROLE}:
+        val = str(light.get(role, "")).strip()
+        if not re.fullmatch(r"#[0-9a-fA-F]{6}", val):
+            raise SystemExit(f"build_readme: palette.yaml screen.light.{role} missing or not #rrggbb: {val!r}")
+        out[role] = val[1:].upper()
+    return out
 
 # skills.yaml `id` -> list of (badge label, shields logo slug or None).
 # Presentation only: which skills exist, their order, and their category all
 # come from skills.yaml. A skill id absent here still renders (label derived
 # from its name, no logo), so a newly added skill appears automatically.
+#
+# Logo slugs must exist in Simple Icons, which shields.io draws from. An
+# unknown slug does NOT error: shields.io returns a normal 200 badge with the
+# icon silently missing. dbt, AWS, Azure and Power BI lost their icons this way
+# when Simple Icons removed those brands (confirmed absent in 16.35.0,
+# 2026-10-12), so they are None here. scripts/check_badges.py renders every
+# badge and fails when a requested logo does not draw; run it before adding
+# a slug here.
 SKILL_BADGES: dict[str, list[tuple[str, str | None]]] = {
     "sql": [("SQL", None)],
     "python": [("Python", "python")],
-    "dbt": [("dbt", "dbt")],
+    "dbt": [("dbt", None)],
     "rails": [("Ruby on Rails", "rubyonrails")],
     "clojure": [("Clojure", "clojure")],
     "perl": [("Perl", "perl")],
@@ -97,12 +134,12 @@ SKILL_BADGES: dict[str, list[tuple[str, str | None]]] = {
     "stata": [("Stata", None)],
     "r": [("R", "r")],
     "git": [("git", "git")],
-    "aws": [("AWS", "amazonwebservices")],
-    "azure-databricks": [("Azure", "microsoftazure"), ("Databricks", "databricks")],
+    "aws": [("AWS", None)],
+    "azure-databricks": [("Azure", None), ("Databricks", "databricks")],
     "okta": [("Okta", "okta")],
     "sisense": [("Sisense", None)],
     "periscope": [("Periscope", None)],
-    "power-bi": [("Power BI", "powerbi")],
+    "power-bi": [("Power BI", None)],
     "grafana": [("Grafana", "grafana")],
     "datadog": [("Datadog", "datadog")],
     "hedis": [("HEDIS", None)],
@@ -153,9 +190,10 @@ def render_stack(site: Path) -> str:
     by_cat: dict[str, list[dict]] = {c: [] for c in order}
     for sk in skills:
         by_cat.setdefault(sk["category"], []).append(sk)
+    palette = load_palette(site)
     rows = []
     for cat in order:
-        color = CAT_COLOR.get(cat, "6A6A6A")
+        color = palette[CAT_ROLE.get(cat, DEFAULT_ROLE)]
         badges = []
         for sk in by_cat.get(cat, []):
             specs = SKILL_BADGES.get(sk["id"]) or [(_fallback_label(sk["name"]), None)]

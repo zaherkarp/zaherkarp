@@ -1,0 +1,42 @@
+name: Check badges and links
+
+# Renders every shields.io badge on the profile README and fails if a
+# requested icon no longer draws, or if a link has gone 404. A status-code
+# check cannot catch the first case: shields.io answers an unknown logo slug
+# with a normal 200 badge minus the icon, which is how seven icons went
+# missing unnoticed until 2026-10-12. A red scheduled run emails the owner.
+#
+# Stdlib only; installs nothing. --self-test runs first and must flag a known
+# dead logo, so a check that has gone blind cannot report green.
+on:
+  schedule:
+    - cron: "37 9 * * 1" # weekly, Monday 09:37 UTC
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+      - "scripts/check_badges.py"
+      - ".github/workflows/check-badges.yml"
+  pull_request:
+    paths:
+      - "README.md"
+      - "scripts/build_readme.py"
+      - "scripts/check_badges.py"
+      - ".github/workflows/check-badges.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Self-test (the logo check must be able to fail)
+        run: python scripts/check_badges.py --self-test
+      - name: Check badges and links
+        run: python scripts/check_badges.py
