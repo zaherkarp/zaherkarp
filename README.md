@@ -36,7 +36,7 @@ I started as a news writer and book editor, moved into healthcare research at UW
 ## Featured projects
 
 <!-- projects:start -->
-- **Medicare Advantage Insight Engine** — A self-running daily feed that separates CMS Medicare Advantage rulemaking signal from press-release noise, scoring each item on six named features and posting what clears the threshold.  
+- **Medicare Advantage Insight Engine** — A self-running feed that scores healthcare news for Medicare Advantage relevance with an explainable, deterministic model and publishes what clears the threshold as a feed and daily briefing.  
   [Daily Briefing](https://signal.zaherkarp.com/briefing.html) · [Live feed](https://signal.zaherkarp.com/) · [Source](https://github.com/zaherkarp/medicare-advantage-insight-engine) · [Methodology post](https://www.zaherkarp.com/blog/medicare-advantage-insight-engine/)
 - **Stars Cliff Simulator** — An interactive teaching demo of the 4.0 star Quality Bonus Payment cliff in CMS Star Ratings. Vanilla JS, no dependencies, synthetic weights.  
   [Live demo](https://www.zaherkarp.com/star-rating-predictor/) · [Methodology post](https://www.zaherkarp.com/blog/star-rating-predictor-methodology/)
@@ -61,11 +61,11 @@ I started as a news writer and book editor, moved into healthcare research at UW
 Long-form essays on healthcare data engineering, Stars methodology, and measurement. A few recent ones:
 
 <!-- writing:start -->
+- [The Evidence You Owe for an LLM Coverage Decision](https://www.zaherkarp.com/blog/coverage-decision-evidence/)
 - [My Cap Falls by a Third. My Work Falls by a Sixth.](https://www.zaherkarp.com/blog/cap-falls-third-work-falls-sixth/)
 - [Eight Tools, Eight Models Folders](https://www.zaherkarp.com/blog/eight-tools-eight-models-folders/)
 - [BTEQ Still Has a Job](https://www.zaherkarp.com/blog/bteq-still-has-a-job/)
 - [The Metric Isn't Wrong. It's Just Not Where Quality Lives.](https://www.zaherkarp.com/blog/what-the-metric-cannot-see/)
-- [One API call, three ways to split it: a FRED case study](https://www.zaherkarp.com/blog/one-api-call-three-ways-to-split-it/)
 <!-- writing:end -->
 
 Full archive at [zaherkarp.com/blog](https://www.zaherkarp.com/blog/).
