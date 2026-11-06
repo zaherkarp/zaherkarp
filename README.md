@@ -61,11 +61,11 @@ I started as a news writer and book editor, moved into healthcare research at UW
 Long-form essays on healthcare data engineering, Stars methodology, and measurement. A few recent ones:
 
 <!-- writing:start -->
+- [The Dashboard Isn't the Measurement. It's a Reflection Four Layers Deep.](https://www.zaherkarp.com/blog/four-layers-from-the-patient/)
 - [The Evidence You Owe for an LLM Coverage Decision](https://www.zaherkarp.com/blog/coverage-decision-evidence/)
 - [My Cap Falls by a Third. My Work Falls by a Sixth.](https://www.zaherkarp.com/blog/cap-falls-third-work-falls-sixth/)
 - [Eight Tools, Eight Models Folders](https://www.zaherkarp.com/blog/eight-tools-eight-models-folders/)
 - [BTEQ Still Has a Job](https://www.zaherkarp.com/blog/bteq-still-has-a-job/)
-- [The Metric Isn't Wrong. It's Just Not Where Quality Lives.](https://www.zaherkarp.com/blog/what-the-metric-cannot-see/)
 <!-- writing:end -->
 
 Full archive at [zaherkarp.com/blog](https://www.zaherkarp.com/blog/).
