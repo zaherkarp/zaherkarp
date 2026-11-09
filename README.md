@@ -42,7 +42,7 @@ I started as a news writer and book editor, moved into healthcare research at UW
   [Live demo](https://www.zaherkarp.com/star-rating-predictor/) · [Methodology post](https://www.zaherkarp.com/blog/star-rating-predictor-methodology/)
 - **Healthcare Workforce Transition Platform** — An O*NET-based model estimating reskilling transition probabilities across the healthcare workforce, sorting targets into Ready Now, Trainable, and Long-Term Reskill with a skill-domain gap analysis.  
   [GitHub](https://github.com/zaherkarp/skillsprout) · [Post](https://www.zaherkarp.com/blog/onet-reskilling-probabilities/)
-- **ECDS Shock Index** — A HEDIS Electronic Clinical Data Systems measure prototype that models how rates shift when ECDS replaces claims-based ED coding, and estimates the Stars cut-point effect at the plan level.  
+- **ECDS Shock Index** — A HEDIS Electronic Clinical Data Systems measure prototype that models how rates shift when ECDS replaces claims-only coding, and estimates the Stars cut-point effect at the plan level.  
   [GitHub](https://github.com/zaherkarp/ecds-shock-index) · [Post](https://www.zaherkarp.com/blog/ecds-shock-index/)
 - **Care Delivery Workflow Changes** — An interrupted time series evaluation of a care-delivery redesign, separating the level shift at implementation from the underlying trend.  
   [Case study](https://www.zaherkarp.com/case-study-care-redesign/) · [Post](https://www.zaherkarp.com/blog/interrupted-time-series-care-redesign/)
