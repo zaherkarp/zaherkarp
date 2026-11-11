@@ -38,7 +38,7 @@ I started as a news writer and book editor, moved into healthcare research at UW
 <!-- projects:start -->
 - **Medicare Advantage Insight Engine** — A self-running feed that scores healthcare news for Medicare Advantage relevance with an explainable, deterministic model and publishes what clears the threshold as a feed and daily briefing.  
   [Daily Briefing](https://signal.zaherkarp.com/briefing.html) · [Live feed](https://signal.zaherkarp.com/) · [Source](https://github.com/zaherkarp/medicare-advantage-insight-engine) · [Methodology post](https://www.zaherkarp.com/blog/medicare-advantage-insight-engine/)
-- **Stars Cliff Simulator** — An interactive teaching demo of the 4.0 star Quality Bonus Payment cliff in CMS Star Ratings. Vanilla JS, no dependencies, synthetic weights.  
+- **Stars Cliff Simulator** — An interactive teaching demo of the 4.0 star Quality Bonus Payment cliff in CMS Star Ratings, fit on CMS contract-level data. Vanilla JS, no dependencies.  
   [Live demo](https://www.zaherkarp.com/star-rating-predictor/) · [Methodology post](https://www.zaherkarp.com/blog/star-rating-predictor-methodology/)
 - **Healthcare Workforce Transition Platform** — An O*NET-based model estimating reskilling transition probabilities across the healthcare workforce, sorting targets into Ready Now, Trainable, and Long-Term Reskill with a skill-domain gap analysis.  
   [GitHub](https://github.com/zaherkarp/skillsprout) · [Post](https://www.zaherkarp.com/blog/onet-reskilling-probabilities/)
